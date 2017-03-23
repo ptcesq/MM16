@@ -13,11 +13,16 @@ df2$ot <- df$Numot                  # OT periods
 df2$loc <- as.factor(df$Wloc)       # location for winning team 
 df2$fgm <- df$Wfgm/df$Lfgm          # feild goals made 
 df2$fga <- df$Wfga/df$Lfga          # feild goals attempted 
-df2$fgm3 <- df$Wfgm3/df$Lfgm3
-df2$fga3 <- df$Wfga3/df$Lfga3
-df2$ftm <- df$Wftm/df$Lftm
-df2$fta <- df$Wfta/df$Lfta
-
+df2$fgm3 <- df$Wfgm3/df$Lfgm3       # field goal made 3 point 
+df2$fga3 <- df$Wfga3/df$Lfga3       # field goal attempted 3 point
+df2$ftm <- df$Wftm/df$Lftm          # free throw made 
+df2$fta <- df$Wfta/df$Lfta          # free throw attempted 
+df2$or <- df$Wor/df$Lor             # Offensive rebound 
+df2$dr <- df$Wdr/df$Ldr             # Defensive rebound 
+df2$ast <- df$Wast/df$Last          # Assist 
+df2$to <- df$Wto/df$Lto             # Turn Over 
+df2$blk <- df$Wblk/df$Wblk          # Blocks 
+df2$pf <- df$Wpf/df$Lpf             # Personal Fouls 
 
 # Save Table 
 dbWriteTable(conn, "season_details", df2, overwrite=TRUE)
